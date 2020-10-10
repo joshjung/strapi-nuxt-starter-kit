@@ -1,7 +1,0 @@
-query BlogPostCategories {
-  blogPostCategories {
-    id
-    name
-    description
-  }
-}

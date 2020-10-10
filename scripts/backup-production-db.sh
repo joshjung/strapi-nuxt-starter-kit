@@ -7,7 +7,7 @@ read_var() {
     echo ${VAR[1]}
 }
 
-BLOG_IP=$(read_var BLOG_IP .env.prod)
+SITE_IP=$(read_var SITE_IP .env.prod)
 POSTGRES_EXTERNAL_PORT=$(read_var POSTGRES_EXTERNAL_PORT .env.prod)
 POSTGRES_USER=$(read_var POSTGRES_USER .env.prod)
 POSTGRES_DB=$(read_var POSTGRES_DB .env.prod)
@@ -24,4 +24,4 @@ echo "--------------------------------------------------"
 
 NOW=`date +"%m_%d_%Y_%H_%M"`
 FILE_NAME="${POSTGRES_DB}_db_${NOW}.bak"
-pg_dump -h $BLOG_IP -p $POSTGRES_EXTERNAL_PORT -U $POSTGRES_USER $POSTGRES_DB > $FILE_NAME
+pg_dump -h $SITE_IP -p $POSTGRES_EXTERNAL_PORT -U $POSTGRES_USER $POSTGRES_DB > $FILE_NAME

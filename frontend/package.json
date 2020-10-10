@@ -1,7 +1,7 @@
 {
-  "name": "my-blog-backend",
+  "name": "my-site-frontend",
   "version": "1.0.0",
-  "description": "My personal blog",
+  "description": "My personal site",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
@@ -15,9 +15,7 @@
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc19",
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/dotenv": "^1.4.0",
-    "@nuxtjs/markdownit": "^1.2.9",
     "cross-env": "^5.2.0",
     "dotenv": "^8.2.0",
     "find-config": "^1.0.0",
@@ -26,9 +24,7 @@
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "nuxt": "^2.0.0",
-    "prismjs": "^1.19.0",
     "sass-loader": "^8.0.2",
-    "uikit": "^3.3.6",
     "vue-meta": "^2.3.3",
     "core-js": "^2.6.5"
   },

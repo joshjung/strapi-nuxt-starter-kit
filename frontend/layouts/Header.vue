@@ -4,18 +4,7 @@
       <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
           <li class="logo">
-            <a href="/">My Personal Blog</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-          <li v-for="blogPostCategory in blogPostCategories" v-bind:key="blogPostCategory.id" class="header-links">
-            <router-link
-              :to="{ name: 'blogPostCategories-id', params: { id: blogPostCategory.id }}"
-              tag="a"
-            >{{ blogPostCategory.name }}</router-link>
+            <a href="/">My Site</a>
           </li>
         </ul>
       </div>
@@ -27,23 +16,12 @@
 </template>
 
 <script>
-  import blogPostCategoriesQuery from "~/apollo/queries/category/blogPostCategories";
-  import Links from "~/components/Links";
-
   export default {
     data() {
       return {
-        postCategories: []
       };
     },
     components: {
-      Links
-    },
-    apollo: {
-      blogPostCategories: {
-        prefetch: true,
-        query: blogPostCategoriesQuery
-      }
     }
   };
 </script>

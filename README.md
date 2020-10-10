@@ -1,6 +1,6 @@
-# Strapi.js + Nuxt.js Blog Starter Kit
+# Strapi.js + Nuxt.js Starter Kit
 
-Contained in this repository is an empty blog, setup with the following:
+Contained in this repository is an empty Strapi + Nuxt.js starter kit, setup with the following:
 
 - [Strapi.js Backend](https://strapi.io/)
 - [Strapi.js GraphQL](https://strapi.io/documentation/3.0.0-alpha.x/guides/graphql.html)
@@ -10,32 +10,18 @@ Contained in this repository is an empty blog, setup with the following:
 - [Traefik Edge Router](https://containo.us/traefik/)
 - [Docker Deployment](https://www.docker.com/)
 
-The default blog model includes:
-
-- Blog Posts
-- Blog Series (collection of Blog Posts)
-- Blog Post Categories (generic categories for blog posts)
-- Links (generic links that can be grouped and organized with posts)
-- Images (generic image upload for hero image, etc.)
-
-There is a full default layout, including:
-
-- Home Page
-- Blog Post by id
-- Blog Series by id
-
-You will probably end up changing all the styling of the above, but I include it just so you can get started with something :)
+There is no default model for Strapi. This was branched from [strapi-nuxt-blog-starter-kit](https://github.com/joshjung/strapi-nuxt-starter-kit)
+when I realized I needed more flexibility in making small side projects.
 
 # Getting Started
 
-## One-Time Setup.sh
+## One-Time `scripts/setup.sh`
 
 Make sure that `node` is installed on your system. I built this using version `12.16.1`.
 
 Then run:
 
-    chmod +x setup.sh
-    ./setup.sh
+    cd scripts && chmod +x setup.sh && ./setup.sh
 
 This file only needs to be run once.
 
@@ -45,8 +31,7 @@ The `setup.sh` script creates a `.env` file that you can edit. `.gitignore` is s
 that this file is not checked into your repository.
 
 Now edit the `.env` file so that all the variables are what you desire. I recommend only
-changing the obvious things, like passwords, secrets. etc. but ports might be sketchy
-to edit.
+changing the obvious things, like passwords, secrets. etc.
 
 ## Local Postgres (recommended)
 
@@ -171,7 +156,7 @@ Eventually you will want to setup S3 or something similar. When you do, you can 
 
 - Make sure that your `.env` file has all appropriate settings
 - Make sure that you have a docker repository. I recommend making a free one at [Docker Hub](https://hub.docker.com/).
-- Make sure you have proper `A` and `CNAME` records in your DNS settings for your domain name. You will need `CNAME` records for `BLOG_DOMAIN`, `www.BLOG_DOMAIN`, `BLOG_API_DOMAIN`, and `TRAEFIK_DASHBOARD_DOMAIN`. See `.env` file for what you have chosen.
+- Make sure you have proper `A` and `CNAME` records in your DNS settings for your domain name. You will need `CNAME` records for `SITE_DOMAIN`, `www.SITE_DOMAIN`, `SITE_API_DOMAIN`, and `TRAEFIK_DASHBOARD_DOMAIN`. See `.env` file for what you have chosen.
 - Make sure you have a server with at least *2 GB of RAM* and *8 GB of free disk space* and SSH access. You might be able to run more lean, but I would not recommend it.
 - Install Docker on your server (if not already installed)
 - Install Docker Compose on your server (if not already installed)
@@ -188,7 +173,7 @@ You will need to edit the `traefik/traefik.toml` file. Make sure the domain name
 
 From the root folder:
 
-    ./build-all.sh
+    ./scripts/build-all.sh
 
 ## 4. Pushing Docker Images to Public/Private Repo
 
@@ -197,7 +182,7 @@ From the root folder:
 
 ## 5. Deploying
 
-    ./deploy-to-production.sh
+    ./scripts/deploy-to-production.sh
 
 # Contributing
 
