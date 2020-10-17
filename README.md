@@ -1,3 +1,5 @@
+## {{{gsd.project.name}}}
+
 # Strapi.js + Nuxt.js Starter Kit
 
 Contained in this repository is an empty Strapi + Nuxt.js starter kit, setup with the following:
