@@ -5,3 +5,4 @@ prod_db.dump
 .env
 .env.prod*
 .env.stag*
+node_modules
