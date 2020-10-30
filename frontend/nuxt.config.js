@@ -18,12 +18,12 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: process.env.SITE_TITLE,
+    title: "{{{title}}}",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { hid: 'og:title', name: 'og:title', content: process.env.SITE_TITLE },
+      { hid: 'og:title', name: 'og:title', content: "{{{title}}}" },
       { hid: 'og:image', name: 'og:image', content: 'https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg' },
       { hid: 'og:image', name: 'og:description', content: process.env.SITE_TITLE },
       { hid: 'og:image', name: 'og:url', content: 'https://www.' + process.env.SITE_DOMAIN },

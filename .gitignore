@@ -6,3 +6,4 @@ prod_db.dump
 .env.prod*
 .env.stag*
 node_modules
+.idea

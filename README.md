@@ -1,4 +1,4 @@
-## {{{gsd.project.name}}}
+## Project Title
 
 # Strapi.js + Nuxt.js Starter Kit
 
@@ -90,60 +90,17 @@ the GraphQL calls are returning content that will have an error `Forbidden`. The
 for this is that permissions for access to the models are configured within the Postgres
 database and we have not done that yet.
 
-## Setting up Strapi.js Model Permissions
-
-With the backend still running:
-
-1. Navigate to `http://localhost:1337/admin/plugins/users-permissions/roles` or choose `Roles & Permissions` in the admin interface.
-
-2. Select `Public` in the available roles.
-
-3. For `Blog-Post`, `Blog-Post-Category`, `Image`, `Blog-Series`, and `Link`:
-
-4. Check the boxes for `count`, `find`, and `findone`.
-
-5. After checking all 12 checkboxes, click `Save`.
-
-You need to check all 12 checkboxes. This will allow the GraphQL for the Nuxt.js frontend
-to retrieve all the objects we need in our public blog.
-
-6. Refresh the page at `localhost:3000`! You will now see your empty blog.
-
-# Creating your first Blog Post
-
-Go back to the Strapi.js administrative panel:
-
-1. Click `Blog Posts`
-2. Click `Add New Blog Post`
-3. Enter in a `Title`
-4. Set `Public` to `On`
-5. Add an optional `image_header`
-6. Add `Content`
-7. Set a `Description`
-8. Set `Show_description` to `On`
-9. Click `Save`
-10. Refresh `localhost:3000` and you will see your blog post!
-
-# Creating a Hero Image
-
-Go back to the Strapi.js administrative panel:
-
-1. Click `Images`
-2. Click `Add New Image`
-3. Enter in a `Title`
-4. Choose an image (large, preferably, so it can fill a monitor)
-5. Set `Target` to `hero_image`
-6. Click `Save`
-7. Refresh `localhost:3000` and make sure you are on the homepage, and you will see your hero image :D
-
-# Continuing...
+# Further Information
 
 For more information on how stuff works, setting more things up, etc. you can check out my blog
 series on setting up this blog at [Building this Blog w/ Strapi JS](https://www.joshoncode.com/blogSeries/1).
 
 # Connecting to AWS S3
 
-Eventually you will want to setup S3 or something similar. When you do, you can do the following:
+NOTE: By default the repo is setup to hit AWS S3 buckets for saving images. To remove this, you can remove (or change)
+the block of code in `backend/config/plugins.js`. If you remove this block of code, it will save files to local.
+
+For more information on hitting S3 for image / media saving:
 
 1. First see the [Strapi File Upload Instructions](https://strapi.io/documentation/3.0.0-alpha.x/guides/upload.html)
 2. [Install the Strapi S3 Upload Plugin](https://www.npmjs.com/package/strapi-provider-upload-aws-s3)
@@ -151,6 +108,13 @@ Eventually you will want to setup S3 or something similar. When you do, you can 
 4. Completely restart your local Strapi.js develop
 
 # Deploying to Production
+
+## 0. Pipelines
+
+Your setup is probably going to be super custom. For example you might be using Bitbucket Pipelines or Intertube Packets. Whatever
+your technology, the following setup is assuming you are doing a really unsophisticated deploy from local without a proper CI/CD
+setup. Clearly this not not ideal for a longer term setup, but I don't really have time to write out a giant README on setting up
+CI/CD so just use this as a reference.
 
 ## 1. Prerequisites
 
